@@ -1,0 +1,29 @@
+{{- if .Values.service.enabled }}
+{{- $fullName := include "generators.fullname" . }}
+{{- $replicaCount := .Values.replicaCount | int }}
+{{- $root := . }}
+
+{{- range $i, $e := until $replicaCount }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "generators.fullname" $ }}-{{ $i }}-ex
+  labels: {{- include "generators.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: generators-{{ $i }}
+spec:
+  type: {{ $root.Values.service.type }}
+  ports:
+    - name: http
+      port: {{ $root.Values.service.port }}
+      {{- if not (empty $root.Values.service.nodePorts) }}
+      nodePort: {{ index $root.Values.service.nodePorts $i }}
+      {{- else }}
+      nodePort: null
+      {{- end }}
+      targetPort: http
+  selector: {{- include "generators.selectorLabels" $ | nindent 4 }}
+    app.kubernetes.io/component: generators-{{ $i }}
+---
+{{- end }}
+{{- end }}

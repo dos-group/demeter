@@ -1,0 +1,37 @@
+
+replicaCount: 1
+
+image:
+  repository: mcd01/demeter_analytics
+  pullPolicy: Always
+  tag: "latest"
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: NodePort
+  port: 5000
+  targetPort: 5000
+  nodePort: 32001
+
+env:
+  # all of these are for guvicorn
+  WORKERS_PER_CORE: "0.2" # num_workers divided by total_cpu
+  MAX_WORKERS: "2"
+  WEB_CONCURRENCY: "2"
+  PORT: "5000"
+  TIMEOUT: "600"
+  GRACEFUL_TIMEOUT: "0"
+  PRE_START_PATH: /app/app/prepare_model.sh
+  # now some custom ones
+  PROFILING_TIMEOUT: "600"
+
+resources:
+  requests:
+    cpu: "10"
+    memory: "40Gi"
+  limits:
+    cpu: "10"
+    memory: "40Gi"
+

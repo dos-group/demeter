@@ -1,0 +1,50 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: flink-jobmanager
+spec:
+  template:
+    metadata:
+      annotations:
+        prometheus.io/port: '9999'
+        prometheus.io/scrape: 'true'
+      labels:
+        app: flink
+        component: jobmanager
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: jobmanager
+          image: morgel/flink:1.17.0-java11
+          imagePullPolicy: Always
+          env:
+          #args: ["standalone-job", "--job-classname", "de.tu_berlin.dos.arm.streaming_experiment_suite.jobs.TopSpeedWindowing", "--jobName", "reactive", "--brokerList", "kafka:9092", "--consumerTopic", "input", "--producerTopic", "output", "--chkInterval", "20000", "--chkDir", "hdfs://130.149.248.67:9000/flink/checkpoints"]
+          args: ["standalone-job", "--job-classname", "de.tu_berlin.dos.arm.streaming_experiment_suite.jobs.YahooStreamingBenchmark", "--jobName", "reactive", "--brokerList", "kafka:9092", "--consumerTopic", "input", "--producerTopic", "output", "--chkInterval", "20000", "--chkDir", "hdfs://130.149.248.67:9000/flink/checkpoints", "--redisHost", "redis-cluster", "--redisPort", "6379"]
+          ports:
+            - containerPort: 6123
+              name: rpc
+            - containerPort: 6124
+              name: blob-server
+            - containerPort: 8081
+              name: webui
+            - containerPort: 9999
+              name: metrics
+          livenessProbe:
+            tcpSocket:
+              port: 6123
+            initialDelaySeconds: 30
+            periodSeconds: 60
+          volumeMounts:
+            - name: flink-config-volume
+              mountPath: /opt/flink/conf
+          securityContext:
+            runAsUser: 9999  # refers to user _flink_ from official flink image, change if necessary
+      volumes:
+        - name: flink-config-volume
+          configMap:
+            name: flink-config
+            items:
+              - key: flink-conf.yaml
+                path: flink-conf.yaml
+              - key: log4j-console.properties
+                path: log4j-console.properties

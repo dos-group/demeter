@@ -1,0 +1,39 @@
+{{- if .Values.service.enabled }}
+  {{- $fullName := include "generators.fullname" . }}
+  {{- $labels := include "generators.labels" . }}
+  {{- $selectorLabels := include "generators.selectorLabels" . }}
+  {{- $replicaCount := .Values.replicaCount | int }}
+
+  {{- range $i, $e := until $replicaCount }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $fullName }}-{{ $i }}
+  labels:
+    {{- $labels | nindent 4 }}
+    app.kubernetes.io/component: generators-{{ $i }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- $selectorLabels | nindent 6 }}
+      app.kubernetes.io/component: generators-{{ $i }}
+  template:
+    metadata:
+      labels:
+        {{- $selectorLabels | nindent 8 }}
+        app.kubernetes.io/component: generators-{{ $i }}
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: generators
+          image: "morgel/generators:1.0-java_11"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+---
+{{- end }}
+{{- end }}

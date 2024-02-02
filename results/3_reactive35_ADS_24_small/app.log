@@ -1,0 +1,111 @@
+[INFO ] 2023-09-21 05:02:08.149 [main] Context - Reserving NodePort: 32007
+[INFO ] 2023-09-21 05:02:08.447 [main] SequenceFSM - STATE-CHANGE: START -> INITIALIZE
+[WARN ] 2023-09-21 05:02:08.808 [main] VersionUsageUtils - The client is using resource type 'flinkdeployments' with unstable version 'v1beta1'
+[INFO ] 2023-09-21 05:02:14.207 [OkHttp https://10.233.0.1/...] K8sClient - Namespace (reactive) DELETED
+[INFO ] 2023-09-21 05:02:14.248 [OkHttp https://10.233.0.1/...] K8sClient - Namespace (reactive) ADDED
+[INFO ] 2023-09-21 05:02:14.250 [main] ClientsManager - Helm deploy: { redis-cluster: { repo : https://charts.bitnami.com/bitnami },{ values : kubernetes/redis-cluster/values.yaml },{ version : 7.6.4 } }
+[INFO ] 2023-09-21 05:02:17.273 [pool-4-thread-1] Helm - NAME: redis-cluster
+[INFO ] 2023-09-21 05:02:17.274 [pool-4-thread-1] Helm - LAST DEPLOYED: Thu Sep 21 05:02:16 2023
+[INFO ] 2023-09-21 05:02:17.274 [pool-4-thread-1] Helm - NAMESPACE: reactive
+[INFO ] 2023-09-21 05:02:17.275 [pool-4-thread-1] Helm - STATUS: deployed
+[INFO ] 2023-09-21 05:02:17.275 [pool-4-thread-1] Helm - REVISION: 1
+[INFO ] 2023-09-21 05:02:17.275 [pool-4-thread-1] Helm - TEST SUITE: None
+[INFO ] 2023-09-21 05:02:17.275 [pool-4-thread-1] Helm - NOTES:
+[INFO ] 2023-09-21 05:02:17.275 [pool-4-thread-1] Helm - CHART NAME: redis-cluster
+[INFO ] 2023-09-21 05:02:17.275 [pool-4-thread-1] Helm - CHART VERSION: 7.6.4
+[INFO ] 2023-09-21 05:02:17.276 [pool-4-thread-1] Helm - APP VERSION: 6.2.7** Please be patient while the chart is being deployed **
+[INFO ] 2023-09-21 05:02:17.276 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:17.276 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:17.276 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:17.276 [pool-4-thread-1] Helm - You have deployed a Redis&reg; Cluster accessible only from within you Kubernetes Cluster.INFO: The Job to create the cluster will be created.To connect to your Redis&reg; cluster:
+[INFO ] 2023-09-21 05:02:17.277 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:17.277 [pool-4-thread-1] Helm - 1. Run a Redis&reg; pod that you can use as a client:
+[INFO ] 2023-09-21 05:02:17.277 [pool-4-thread-1] Helm - kubectl run --namespace reactive redis-cluster-client --rm --tty -i --restart='Never' \
+[INFO ] 2023-09-21 05:02:17.277 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:17.277 [pool-4-thread-1] Helm - --image docker.io/bitnami/redis-cluster:6.2.7-debian-11-r9 -- bash
+[INFO ] 2023-09-21 05:02:17.277 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:17.278 [pool-4-thread-1] Helm - 2. Connect using the Redis&reg; CLI:
+[INFO ] 2023-09-21 05:02:17.278 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:17.278 [pool-4-thread-1] Helm - redis-cli -c -h redis-cluster
+[INFO ] 2023-09-21 05:02:17.287 [main] ClientsManager - Helm deploy: { kafka: { repo : https://charts.bitnami.com/bitnami },{ values : kubernetes/kafka/values.yaml },{ version : 22.1.3 } }
+[INFO ] 2023-09-21 05:02:20.219 [pool-5-thread-1] Helm - NAME: kafka
+[INFO ] 2023-09-21 05:02:20.220 [pool-5-thread-1] Helm - LAST DEPLOYED: Thu Sep 21 05:02:19 2023
+[INFO ] 2023-09-21 05:02:20.220 [pool-5-thread-1] Helm - NAMESPACE: reactive
+[INFO ] 2023-09-21 05:02:20.220 [pool-5-thread-1] Helm - STATUS: deployed
+[INFO ] 2023-09-21 05:02:20.220 [pool-5-thread-1] Helm - REVISION: 1
+[INFO ] 2023-09-21 05:02:20.220 [pool-5-thread-1] Helm - TEST SUITE: None
+[INFO ] 2023-09-21 05:02:20.221 [pool-5-thread-1] Helm - NOTES:
+[INFO ] 2023-09-21 05:02:20.221 [pool-5-thread-1] Helm - CHART NAME: kafka
+[INFO ] 2023-09-21 05:02:20.221 [pool-5-thread-1] Helm - CHART VERSION: 22.1.3
+[INFO ] 2023-09-21 05:02:20.221 [pool-5-thread-1] Helm - APP VERSION: 3.4.0
+[INFO ] 2023-09-21 05:02:20.221 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:20.222 [pool-5-thread-1] Helm - ** Please be patient while the chart is being deployed **
+[INFO ] 2023-09-21 05:02:20.222 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:20.222 [pool-5-thread-1] Helm - Kafka can be accessed by consumers via port 9092 on the following DNS name from within your cluster:
+[INFO ] 2023-09-21 05:02:20.222 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:20.222 [pool-5-thread-1] Helm -     kafka.reactive.svc.cluster.local
+[INFO ] 2023-09-21 05:02:20.222 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:20.223 [pool-5-thread-1] Helm - Each Kafka broker can be accessed by producers via port 9092 on the following DNS name(s) from within your cluster:
+[INFO ] 2023-09-21 05:02:20.223 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:20.223 [pool-5-thread-1] Helm -     kafka-0.kafka-headless.reactive.svc.cluster.local:9092
+[INFO ] 2023-09-21 05:02:20.223 [pool-5-thread-1] Helm -     kafka-1.kafka-headless.reactive.svc.cluster.local:9092
+[INFO ] 2023-09-21 05:02:20.223 [pool-5-thread-1] Helm -     kafka-2.kafka-headless.reactive.svc.cluster.local:9092
+[INFO ] 2023-09-21 05:02:20.224 [pool-5-thread-1] Helm -     kafka-3.kafka-headless.reactive.svc.cluster.local:9092
+[INFO ] 2023-09-21 05:02:20.224 [pool-5-thread-1] Helm -     kafka-4.kafka-headless.reactive.svc.cluster.local:9092
+[INFO ] 2023-09-21 05:02:20.224 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:20.224 [pool-5-thread-1] Helm - To create a pod that you can use as a Kafka client run the following commands:
+[INFO ] 2023-09-21 05:02:20.224 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:20.224 [pool-5-thread-1] Helm -     kubectl run kafka-client --restart='Never' --image docker.io/bitnami/kafka:3.4.0-debian-11-r33 --namespace reactive --command -- sleep infinity
+[INFO ] 2023-09-21 05:02:20.225 [pool-5-thread-1] Helm -     kubectl exec --tty -i kafka-client --namespace reactive -- bash
+[INFO ] 2023-09-21 05:02:20.225 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:20.225 [pool-5-thread-1] Helm -     PRODUCER:
+[INFO ] 2023-09-21 05:02:20.225 [pool-5-thread-1] Helm -         kafka-console-producer.sh \
+[INFO ] 2023-09-21 05:02:20.225 [pool-5-thread-1] Helm -             --broker-list kafka-0.kafka-headless.reactive.svc.cluster.local:9092,kafka-1.kafka-headless.reactive.svc.cluster.local:9092,kafka-2.kafka-headless.reactive.svc.cluster.local:9092,kafka-3.kafka-headless.reactive.svc.cluster.local:9092,kafka-4.kafka-headless.reactive.svc.cluster.local:9092 \
+[INFO ] 2023-09-21 05:02:20.226 [pool-5-thread-1] Helm -             --topic test
+[INFO ] 2023-09-21 05:02:20.226 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-21 05:02:20.226 [pool-5-thread-1] Helm -     CONSUMER:
+[INFO ] 2023-09-21 05:02:20.226 [pool-5-thread-1] Helm -         kafka-console-consumer.sh \
+[INFO ] 2023-09-21 05:02:20.226 [pool-5-thread-1] Helm -             --bootstrap-server kafka.reactive.svc.cluster.local:9092 \
+[INFO ] 2023-09-21 05:02:20.226 [pool-5-thread-1] Helm -             --topic test \
+[INFO ] 2023-09-21 05:02:20.227 [pool-5-thread-1] Helm -             --from-beginning
+[INFO ] 2023-09-21 05:02:20.236 [main] ClientsManager - Helm deploy: { generators: { chart : kubernetes/generators } }
+[INFO ] 2023-09-21 05:02:20.237 [main] ClientsManager - kubernetes/generators
+[INFO ] 2023-09-21 05:02:20.556 [pool-6-thread-1] Helm - NAME: generators
+[INFO ] 2023-09-21 05:02:20.557 [pool-6-thread-1] Helm - LAST DEPLOYED: Thu Sep 21 05:02:20 2023
+[INFO ] 2023-09-21 05:02:20.557 [pool-6-thread-1] Helm - NAMESPACE: reactive
+[INFO ] 2023-09-21 05:02:20.557 [pool-6-thread-1] Helm - STATUS: deployed
+[INFO ] 2023-09-21 05:02:20.557 [pool-6-thread-1] Helm - REVISION: 1
+[INFO ] 2023-09-21 05:02:20.557 [pool-6-thread-1] Helm - TEST SUITE: None
+[INFO ] 2023-09-21 05:03:33.537 [main] ClientsManager - Generator started with parameters: {"generatorType":"ADS","topic":"input","brokerList":"kafka.reactive.svc.cluster.local:9092","limiterType":"DATASET","limiterMaxNoise":0.1,"amplitude":0,"period":3600,"verticalPhase":300000,"fileName":"datasets/ADS_3D_1S_4_sub_30K_max.csv","header":true,"separator":"|","scale":1.0,"redisHost":"redis-cluster","redisPort":6379}
+[INFO ] 2023-09-21 05:03:47.700 [main] ClientsManager - Generator started with parameters: {"generatorType":"ADS","topic":"input","brokerList":"kafka.reactive.svc.cluster.local:9092","limiterType":"DATASET","limiterMaxNoise":0.1,"amplitude":0,"period":3600,"verticalPhase":300000,"fileName":"datasets/ADS_3D_1S_4_sub_30K_max.csv","header":true,"separator":"|","scale":1.0,"redisHost":"redis-cluster","redisPort":6379}
+[INFO ] 2023-09-21 05:04:01.006 [main] ClientsManager - Generator started with parameters: {"generatorType":"ADS","topic":"input","brokerList":"kafka.reactive.svc.cluster.local:9092","limiterType":"DATASET","limiterMaxNoise":0.1,"amplitude":0,"period":3600,"verticalPhase":300000,"fileName":"datasets/ADS_3D_1S_4_sub_30K_max.csv","header":true,"separator":"|","scale":1.0,"redisHost":"redis-cluster","redisPort":6379}
+[INFO ] 2023-09-21 05:04:01.007 [main] ClientsManager - Yaml deploy: { flinkReactive: { 1 : kubernetes/flink/flink-configmap.yaml },{ 2 : kubernetes/flink/jobmanager-application.yaml },{ 3 : kubernetes/flink/jobmanager-service.yaml },{ 4 : kubernetes/flink/jobmanager-rest-service.yaml },{ 5 : kubernetes/flink/taskmanager-job-deployment.yaml } }
+[INFO ] 2023-09-21 05:05:07.128 [main] SequenceFSM - Started target job: FlinkJob{port=32007, entryClass='de.tu_berlin.dos.arm.streaming_experiment_suite.jobs.YahooStreamingBenchmark', jobName='reactive', brokerList='kafka.reactive.svc.cluster.local:9092', consTopic='input', prodTopic='output', extraArgs={redisHost=redis-cluster, redisPort=6379}, config={scaleOut: 24, taskSlots: 1, cpu: 1.0, memory: 4096, chkInt: 10000}, tsList=[1695272708], jobId='63740ca2a2443763156a76dead7f741d', isActive=true}
+[INFO ] 2023-09-21 05:05:07.128 [main] SequenceFSM - STATE-CHANGE: INITIALIZE -> EXECUTE
+[INFO ] 2023-09-21 05:05:07.231 [main] SequenceFSM - Starting Experiment: 1695272708
+[INFO ] 2023-09-21 05:50:24.014 [pool-2-thread-1] SequenceFSM - Injecting delay into target job: reactive at TS: 1695275425
+[WARN ] 2023-09-21 05:50:24.035 [pool-2-thread-1] VersionUsageUtils - The client is using resource type 'networkchaos' with unstable version 'v1alpha1'
+[INFO ] 2023-09-21 06:35:14.013 [pool-2-thread-2] SequenceFSM - Injecting delay into target job: reactive at TS: 1695278115
+[INFO ] 2023-09-21 07:20:13.006 [pool-2-thread-3] SequenceFSM - Injecting delay into target job: reactive at TS: 1695280814
+[INFO ] 2023-09-21 08:05:16.011 [pool-2-thread-4] SequenceFSM - Injecting delay into target job: reactive at TS: 1695283517
+[INFO ] 2023-09-21 08:50:14.005 [pool-2-thread-5] SequenceFSM - Injecting delay into target job: reactive at TS: 1695286215
+[INFO ] 2023-09-21 09:35:25.011 [pool-2-thread-6] SequenceFSM - Injecting delay into target job: reactive at TS: 1695288926
+[INFO ] 2023-09-21 10:20:09.011 [pool-2-thread-7] SequenceFSM - Injecting delay into target job: reactive at TS: 1695291610
+[INFO ] 2023-09-21 11:05:24.003 [pool-2-thread-8] SequenceFSM - Injecting delay into target job: reactive at TS: 1695294325
+[INFO ] 2023-09-21 11:50:23.007 [pool-2-thread-9] SequenceFSM - Injecting delay into target job: reactive at TS: 1695297024
+[INFO ] 2023-09-21 12:35:08.011 [pool-2-thread-10] SequenceFSM - Injecting delay into target job: reactive at TS: 1695299709
+[INFO ] 2023-09-21 13:20:08.004 [pool-2-thread-11] SequenceFSM - Injecting delay into target job: reactive at TS: 1695302409
+[INFO ] 2023-09-21 14:05:22.004 [pool-2-thread-12] SequenceFSM - Injecting delay into target job: reactive at TS: 1695305123
+[INFO ] 2023-09-21 14:50:24.013 [pool-2-thread-13] SequenceFSM - Injecting delay into target job: reactive at TS: 1695307825
+[INFO ] 2023-09-21 15:35:16.003 [pool-2-thread-14] SequenceFSM - Injecting delay into target job: reactive at TS: 1695310517
+[INFO ] 2023-09-21 16:20:16.004 [pool-2-thread-15] SequenceFSM - Injecting delay into target job: reactive at TS: 1695313217
+[INFO ] 2023-09-21 17:05:17.012 [pool-2-thread-16] SequenceFSM - Injecting delay into target job: reactive at TS: 1695315918
+[INFO ] 2023-09-21 17:50:08.003 [pool-2-thread-17] SequenceFSM - Injecting delay into target job: reactive at TS: 1695318609
+[INFO ] 2023-09-21 18:35:22.004 [pool-2-thread-18] SequenceFSM - Injecting delay into target job: reactive at TS: 1695321323
+[INFO ] 2023-09-21 19:20:13.011 [pool-2-thread-19] SequenceFSM - Injecting delay into target job: reactive at TS: 1695324014
+[INFO ] 2023-09-21 20:05:22.012 [pool-2-thread-20] SequenceFSM - Injecting delay into target job: reactive at TS: 1695326723
+[INFO ] 2023-09-21 20:50:18.006 [pool-2-thread-21] SequenceFSM - Injecting delay into target job: reactive at TS: 1695329419
+[INFO ] 2023-09-21 21:35:21.003 [pool-2-thread-22] SequenceFSM - Injecting delay into target job: reactive at TS: 1695332122
+[INFO ] 2023-09-21 22:20:22.009 [pool-2-thread-23] SequenceFSM - Injecting delay into target job: reactive at TS: 1695334823
+[INFO ] 2023-09-21 23:05:07.013 [main] SequenceFSM - Stopping Experiment: 1695337508
+[INFO ] 2023-09-21 23:05:14.007 [pool-2-thread-24] SequenceFSM - Injecting delay into target job: reactive at TS: 1695337515

@@ -1,0 +1,118 @@
+[INFO ] 2023-09-17 09:11:13.043 [main] Context - Reserving NodePort: 32007
+[INFO ] 2023-09-17 09:11:13.383 [main] SequenceFSM - STATE-CHANGE: START -> INITIALIZE
+[INFO ] 2023-09-17 09:11:13.845 [OkHttp https://10.233.0.1/...] K8sClient - Namespace (operator2) ADDED
+[INFO ] 2023-09-17 09:11:13.847 [main] ClientsManager - Helm deploy: { redis-cluster: { repo : https://charts.bitnami.com/bitnami },{ values : kubernetes/redis-cluster/values.yaml },{ version : 7.6.4 } }
+[INFO ] 2023-09-17 09:11:16.896 [pool-4-thread-1] Helm - NAME: redis-cluster
+[INFO ] 2023-09-17 09:11:16.898 [pool-4-thread-1] Helm - LAST DEPLOYED: Sun Sep 17 09:11:16 2023
+[INFO ] 2023-09-17 09:11:16.898 [pool-4-thread-1] Helm - NAMESPACE: operator2
+[INFO ] 2023-09-17 09:11:16.898 [pool-4-thread-1] Helm - STATUS: deployed
+[INFO ] 2023-09-17 09:11:16.899 [pool-4-thread-1] Helm - REVISION: 1
+[INFO ] 2023-09-17 09:11:16.899 [pool-4-thread-1] Helm - TEST SUITE: None
+[INFO ] 2023-09-17 09:11:16.899 [pool-4-thread-1] Helm - NOTES:
+[INFO ] 2023-09-17 09:11:16.899 [pool-4-thread-1] Helm - CHART NAME: redis-cluster
+[INFO ] 2023-09-17 09:11:16.900 [pool-4-thread-1] Helm - CHART VERSION: 7.6.4
+[INFO ] 2023-09-17 09:11:16.900 [pool-4-thread-1] Helm - APP VERSION: 6.2.7** Please be patient while the chart is being deployed **
+[INFO ] 2023-09-17 09:11:16.900 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:16.901 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:16.901 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:16.901 [pool-4-thread-1] Helm - You have deployed a Redis&reg; Cluster accessible only from within you Kubernetes Cluster.INFO: The Job to create the cluster will be created.To connect to your Redis&reg; cluster:
+[INFO ] 2023-09-17 09:11:16.901 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:16.902 [pool-4-thread-1] Helm - 1. Run a Redis&reg; pod that you can use as a client:
+[INFO ] 2023-09-17 09:11:16.902 [pool-4-thread-1] Helm - kubectl run --namespace operator2 redis-cluster-client --rm --tty -i --restart='Never' \
+[INFO ] 2023-09-17 09:11:16.902 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:16.902 [pool-4-thread-1] Helm - --image docker.io/bitnami/redis-cluster:6.2.7-debian-11-r9 -- bash
+[INFO ] 2023-09-17 09:11:16.902 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:16.903 [pool-4-thread-1] Helm - 2. Connect using the Redis&reg; CLI:
+[INFO ] 2023-09-17 09:11:16.903 [pool-4-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:16.903 [pool-4-thread-1] Helm - redis-cli -c -h redis-cluster
+[INFO ] 2023-09-17 09:11:16.910 [main] ClientsManager - Helm deploy: { kafka: { repo : https://charts.bitnami.com/bitnami },{ values : kubernetes/kafka/values.yaml },{ version : 22.1.3 } }
+[INFO ] 2023-09-17 09:11:19.812 [pool-5-thread-1] Helm - NAME: kafka
+[INFO ] 2023-09-17 09:11:19.813 [pool-5-thread-1] Helm - LAST DEPLOYED: Sun Sep 17 09:11:19 2023
+[INFO ] 2023-09-17 09:11:19.813 [pool-5-thread-1] Helm - NAMESPACE: operator2
+[INFO ] 2023-09-17 09:11:19.813 [pool-5-thread-1] Helm - STATUS: deployed
+[INFO ] 2023-09-17 09:11:19.814 [pool-5-thread-1] Helm - REVISION: 1
+[INFO ] 2023-09-17 09:11:19.814 [pool-5-thread-1] Helm - TEST SUITE: None
+[INFO ] 2023-09-17 09:11:19.814 [pool-5-thread-1] Helm - NOTES:
+[INFO ] 2023-09-17 09:11:19.814 [pool-5-thread-1] Helm - CHART NAME: kafka
+[INFO ] 2023-09-17 09:11:19.814 [pool-5-thread-1] Helm - CHART VERSION: 22.1.3
+[INFO ] 2023-09-17 09:11:19.814 [pool-5-thread-1] Helm - APP VERSION: 3.4.0
+[INFO ] 2023-09-17 09:11:19.815 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:19.815 [pool-5-thread-1] Helm - ** Please be patient while the chart is being deployed **
+[INFO ] 2023-09-17 09:11:19.815 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:19.815 [pool-5-thread-1] Helm - Kafka can be accessed by consumers via port 9092 on the following DNS name from within your cluster:
+[INFO ] 2023-09-17 09:11:19.815 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:19.815 [pool-5-thread-1] Helm -     kafka.operator2.svc.cluster.local
+[INFO ] 2023-09-17 09:11:19.815 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:19.816 [pool-5-thread-1] Helm - Each Kafka broker can be accessed by producers via port 9092 on the following DNS name(s) from within your cluster:
+[INFO ] 2023-09-17 09:11:19.816 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:19.816 [pool-5-thread-1] Helm -     kafka-0.kafka-headless.operator2.svc.cluster.local:9092
+[INFO ] 2023-09-17 09:11:19.816 [pool-5-thread-1] Helm -     kafka-1.kafka-headless.operator2.svc.cluster.local:9092
+[INFO ] 2023-09-17 09:11:19.816 [pool-5-thread-1] Helm -     kafka-2.kafka-headless.operator2.svc.cluster.local:9092
+[INFO ] 2023-09-17 09:11:19.817 [pool-5-thread-1] Helm -     kafka-3.kafka-headless.operator2.svc.cluster.local:9092
+[INFO ] 2023-09-17 09:11:19.817 [pool-5-thread-1] Helm -     kafka-4.kafka-headless.operator2.svc.cluster.local:9092
+[INFO ] 2023-09-17 09:11:19.817 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:19.817 [pool-5-thread-1] Helm - To create a pod that you can use as a Kafka client run the following commands:
+[INFO ] 2023-09-17 09:11:19.817 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:19.817 [pool-5-thread-1] Helm -     kubectl run kafka-client --restart='Never' --image docker.io/bitnami/kafka:3.4.0-debian-11-r33 --namespace operator2 --command -- sleep infinity
+[INFO ] 2023-09-17 09:11:19.818 [pool-5-thread-1] Helm -     kubectl exec --tty -i kafka-client --namespace operator2 -- bash
+[INFO ] 2023-09-17 09:11:19.818 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:19.818 [pool-5-thread-1] Helm -     PRODUCER:
+[INFO ] 2023-09-17 09:11:19.818 [pool-5-thread-1] Helm -         kafka-console-producer.sh \
+[INFO ] 2023-09-17 09:11:19.818 [pool-5-thread-1] Helm -             --broker-list kafka-0.kafka-headless.operator2.svc.cluster.local:9092,kafka-1.kafka-headless.operator2.svc.cluster.local:9092,kafka-2.kafka-headless.operator2.svc.cluster.local:9092,kafka-3.kafka-headless.operator2.svc.cluster.local:9092,kafka-4.kafka-headless.operator2.svc.cluster.local:9092 \
+[INFO ] 2023-09-17 09:11:19.818 [pool-5-thread-1] Helm -             --topic test
+[INFO ] 2023-09-17 09:11:19.819 [pool-5-thread-1] Helm - 
+[INFO ] 2023-09-17 09:11:19.819 [pool-5-thread-1] Helm -     CONSUMER:
+[INFO ] 2023-09-17 09:11:19.819 [pool-5-thread-1] Helm -         kafka-console-consumer.sh \
+[INFO ] 2023-09-17 09:11:19.819 [pool-5-thread-1] Helm -             --bootstrap-server kafka.operator2.svc.cluster.local:9092 \
+[INFO ] 2023-09-17 09:11:19.819 [pool-5-thread-1] Helm -             --topic test \
+[INFO ] 2023-09-17 09:11:19.819 [pool-5-thread-1] Helm -             --from-beginning
+[INFO ] 2023-09-17 09:11:19.830 [main] ClientsManager - Helm deploy: { generators: { chart : kubernetes/generators } }
+[INFO ] 2023-09-17 09:11:19.831 [main] ClientsManager - kubernetes/generators
+[INFO ] 2023-09-17 09:11:20.161 [pool-6-thread-1] Helm - NAME: generators
+[INFO ] 2023-09-17 09:11:20.162 [pool-6-thread-1] Helm - LAST DEPLOYED: Sun Sep 17 09:11:19 2023
+[INFO ] 2023-09-17 09:11:20.162 [pool-6-thread-1] Helm - NAMESPACE: operator2
+[INFO ] 2023-09-17 09:11:20.162 [pool-6-thread-1] Helm - STATUS: deployed
+[INFO ] 2023-09-17 09:11:20.163 [pool-6-thread-1] Helm - REVISION: 1
+[INFO ] 2023-09-17 09:11:20.163 [pool-6-thread-1] Helm - TEST SUITE: None
+[INFO ] 2023-09-17 09:13:34.290 [main] ClientsManager - Generator started with parameters: {"generatorType":"ADS","topic":"input","brokerList":"kafka.operator2.svc.cluster.local:9092","limiterType":"DATASET","limiterMaxNoise":0.1,"amplitude":0,"period":3600,"verticalPhase":300000,"fileName":"datasets/ADS_3D_1S_4_sub_30K_max.csv","header":true,"separator":"|","scale":1.0,"redisHost":"redis-cluster","redisPort":6379}
+[INFO ] 2023-09-17 09:13:48.106 [main] ClientsManager - Generator started with parameters: {"generatorType":"ADS","topic":"input","brokerList":"kafka.operator2.svc.cluster.local:9092","limiterType":"DATASET","limiterMaxNoise":0.1,"amplitude":0,"period":3600,"verticalPhase":300000,"fileName":"datasets/ADS_3D_1S_4_sub_30K_max.csv","header":true,"separator":"|","scale":1.0,"redisHost":"redis-cluster","redisPort":6379}
+[INFO ] 2023-09-17 09:14:02.467 [main] ClientsManager - Generator started with parameters: {"generatorType":"ADS","topic":"input","brokerList":"kafka.operator2.svc.cluster.local:9092","limiterType":"DATASET","limiterMaxNoise":0.1,"amplitude":0,"period":3600,"verticalPhase":300000,"fileName":"datasets/ADS_3D_1S_4_sub_30K_max.csv","header":true,"separator":"|","scale":1.0,"redisHost":"redis-cluster","redisPort":6379}
+[INFO ] 2023-09-17 09:14:02.487 [main] SequenceFSM - { "apiVersion": "flink.apache.org/v1beta1", "kind": "FlinkDeployment", "metadata": { "name": "operator2" }, "spec": { "image": "morgel/flink:1.17.0-java11", "flinkVersion": "v1_17", "imagePullPolicy": "Always", "flinkConfiguration": { "taskmanager.numberOfTaskSlots": "1", "kubernetes.jobmanager.annotations": "prometheus.io/scrape:true,prometheus.io/port:9999", "kubernetes.taskmanager.annotations": "prometheus.io/scrape:true,prometheus.io/port:9999", "metrics.reporter.prom.factory.class": "org.apache.flink.metrics.prometheus.PrometheusReporterFactory","metrics.reporter.prom.port": "9999","heartbeat.timeout": "20000", "heartbeat.interval": "5000", "state.checkpoints.dir": "hdfs://130.149.248.67:9000/flink/checkpoints", "state.savepoints.dir": "hdfs://130.149.248.67:9000/flink/savepoints", "kubernetes.operator.job.autoscaler.enabled": "true", "kubernetes.operator.job.autoscaler.stabilization.interval": "2m", "kubernetes.operator.job.autoscaler.metrics.window": "1m", "kubernetes.operator.job.autoscaler.target.utilization": "0.35", "kubernetes.operator.job.autoscaler.target.utilization.boundary": "0.15", "kubernetes.operator.job.autoscaler.restart.time": "1m", "kubernetes.operator.job.autoscaler.catch-up.duration": "5m", "pipeline.max-parallelism": "24" }, "podTemplate": { "spec": { "containers": [{ "name": "flink-main-container", "ports": [{ "containerPort": 9999, "name": "metrics" }] }] } }, "serviceAccount": "default", "jobManager": { "resource": { "memory": "4096m", "cpu": 1.0 } }, "taskManager": { "resource": { "memory": "4096m", "cpu": 1.0 } }, "job": { "jarURI": "local:///opt/flink/usrlib/jobs-1.0.jar", "entryClass": "de.tu_berlin.dos.arm.streaming_experiment_suite.jobs.YahooStreamingBenchmark", "args": ["--jobName", "operator2", "--chkInterval", "10000", "--redisHost", "redis-cluster", "--consumerTopic", "input", "--producerTopic", "output", "--redisPort", "6379", "--chkDir", "hdfs://130.149.248.67:9000/flink/checkpoints", "--brokerList", "kafka.operator2.svc.cluster.local:9092"], "parallelism": 24, "upgradeMode": "savepoint", "state": "running" }}}
+[WARN ] 2023-09-17 09:14:02.507 [main] VersionUsageUtils - The client is using resource type 'flinkdeployments' with unstable version 'v1beta1'
+[INFO ] 2023-09-17 09:15:02.170 [main] SequenceFSM - Started target job: FlinkJob{port=32007, entryClass='de.tu_berlin.dos.arm.streaming_experiment_suite.jobs.YahooStreamingBenchmark', jobName='operator2', brokerList='kafka.operator2.svc.cluster.local:9092', consTopic='input', prodTopic='output', extraArgs={redisHost=redis-cluster, redisPort=6379}, config={scaleOut: 24, taskSlots: 1, cpu: 1.0, memory: 4096, chkInt: 10000}, tsList=[1694942103], jobId='2dc8f5101ecc80fca62b029c8096fee6', isActive=true} at TS: 1694942103
+[INFO ] 2023-09-17 09:15:02.237 [main] SequenceFSM - STATE-CHANGE: INITIALIZE -> EXECUTE
+[INFO ] 2023-09-17 09:15:02.250 [main] SequenceFSM - Starting Experiment: 1694942103
+[INFO ] 2023-09-17 10:00:10.005 [pool-2-thread-1] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694944811
+[WARN ] 2023-09-17 10:00:10.027 [pool-2-thread-1] VersionUsageUtils - The client is using resource type 'networkchaos' with unstable version 'v1alpha1'
+[INFO ] 2023-09-17 10:45:06.011 [pool-2-thread-2] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694947507
+[INFO ] 2023-09-17 11:30:03.003 [pool-2-thread-3] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694950204
+[INFO ] 2023-09-17 12:15:04.008 [pool-2-thread-4] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694952905
+[INFO ] 2023-09-17 13:00:04.013 [pool-2-thread-5] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694955605
+[INFO ] 2023-09-17 13:45:17.013 [pool-2-thread-6] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694958318
+[INFO ] 2023-09-17 14:30:11.010 [pool-2-thread-7] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694961012
+[ERROR] 2023-09-17 15:15:02.008 [pool-2-thread-8] Listener - java.io.IOException: unexpected end of stream on Connection{130.149.248.67:32007, proxy=DIRECT hostAddress=/130.149.248.67:32007 cipherSuite=none protocol=http/1.1}
+[INFO ] 2023-09-17 16:00:08.006 [pool-2-thread-9] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694966409
+[INFO ] 2023-09-17 16:45:09.002 [pool-2-thread-10] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694969110
+[INFO ] 2023-09-17 17:30:09.006 [pool-2-thread-11] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694971810
+[INFO ] 2023-09-17 18:15:04.012 [pool-2-thread-12] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694974505
+[INFO ] 2023-09-17 19:00:10.003 [pool-2-thread-13] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694977211
+[INFO ] 2023-09-17 19:45:05.013 [pool-2-thread-14] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694979906
+[INFO ] 2023-09-17 20:30:08.005 [pool-2-thread-15] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694982609
+[INFO ] 2023-09-17 21:15:04.013 [pool-2-thread-16] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694985305
+[INFO ] 2023-09-17 22:00:21.012 [pool-2-thread-17] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694988022
+[INFO ] 2023-09-17 22:45:03.010 [pool-2-thread-18] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694990704
+[INFO ] 2023-09-17 23:30:10.009 [pool-2-thread-19] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694993411
+[INFO ] 2023-09-18 00:15:05.006 [pool-2-thread-20] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694996106
+[INFO ] 2023-09-18 01:00:05.009 [pool-2-thread-21] SequenceFSM - Injecting delay into target job: operator2 at TS: 1694998806
+[INFO ] 2023-09-18 01:45:09.011 [pool-2-thread-22] SequenceFSM - Injecting delay into target job: operator2 at TS: 1695001510
+[INFO ] 2023-09-18 02:30:10.005 [pool-2-thread-23] SequenceFSM - Injecting delay into target job: operator2 at TS: 1695004211
+[INFO ] 2023-09-18 03:15:02.094 [main] SequenceFSM - Stopping Experiment: 1695006903
+[INFO ] 2023-09-18 03:15:02.131 [main] SequenceFSM - Gathering metrics and stopping job with configuration: FlinkJob{port=32007, entryClass='de.tu_berlin.dos.arm.streaming_experiment_suite.jobs.YahooStreamingBenchmark', jobName='operator2', brokerList='kafka.operator2.svc.cluster.local:9092', consTopic='input', prodTopic='output', extraArgs={redisHost=redis-cluster, redisPort=6379}, config={scaleOut: 24, taskSlots: 1, cpu: 1.0, memory: 4096, chkInt: 10000}, tsList=[1694942103, 1694944811, 1694947507, 1694950204, 1694952905, 1694955605, 1694958318, 1694961012, 1694966409, 1694969110, 1694971810, 1694974505, 1694977211, 1694979906, 1694982609, 1694985305, 1694988022, 1694990704, 1694993411, 1694996106, 1694998806, 1695001510, 1695004211, 1695006903], jobId='2dc8f5101ecc80fca62b029c8096fee6', isActive=true}
+[INFO ] 2023-09-18 03:15:03.009 [pool-2-thread-24] SequenceFSM - Injecting delay into target job: operator2 at TS: 1695006904
+[INFO ] 2023-09-18 03:20:10.690 [pool-2-thread-27] TimeSeries - File not found, creating 1_operator2_workRate.out
+[INFO ] 2023-09-18 03:20:10.690 [pool-2-thread-30] TimeSeries - File not found, creating 1_operator2_latency.out
+[INFO ] 2023-09-18 03:20:10.690 [pool-2-thread-28] TimeSeries - File not found, creating 1_operator2_taskSlots.out
+[INFO ] 2023-09-18 03:20:10.690 [pool-2-thread-26] TimeSeries - File not found, creating 1_operator2_consLag.out
+[INFO ] 2023-09-18 03:20:10.690 [pool-2-thread-29] TimeSeries - File not found, creating 1_operator2_thrRate.out
+[INFO ] 2023-09-18 03:20:10.690 [pool-2-thread-31] TimeSeries - File not found, creating 1_operator2_cpuLoad.out
+[INFO ] 2023-09-18 03:20:10.690 [pool-2-thread-25] TimeSeries - File not found, creating 1_operator2_scaleOuts.out
