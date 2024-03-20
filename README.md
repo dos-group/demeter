@@ -1,6 +1,6 @@
 # Demeter: Resource-Efficient Distributed Stream Processing under Dynamic Loads with Multi-Configuration Optimization
 
-This repository is associated with the scientific paper titled "Demeter: Resource-Efficient Distributed Stream Processing under Dynamic Loads with Multi-Configuration Optimization." Herein, we provide the prototype, data, and experimental artifacts that form the basis of our research.
+This repository is associated with the scientific paper titled [Demeter: Resource-Efficient Distributed Stream Processing under Dynamic Loads with Multi-Configuration Optimization](https://arxiv.org/abs/2403.02129). Herein, we provide the prototype, data, and experimental artifacts that form the basis of our research.
 
 ## Paper Abstract
 
@@ -90,3 +90,16 @@ To view the metrics, the following URL can be used to point to the prometheus me
 ```shell
 http://[IP address of K8s Master]:30090/graph?g0.expr=sum(flink_taskmanager_job_task_operator_myLatencyHistogram%7Bjob_name%3D%22demeter%22%7D)%2Fcount(flink_taskmanager_job_task_operator_myLatencyHistogram%7Bjob_name%3D%22demeter%22%7D)&g0.tab=0&g0.stacked=0&g0.show_exemplars=0&g0.range_input=6h&g1.expr=sum(flink_taskmanager_job_task_operator_KafkaSourceReader_KafkaConsumer_records_consumed_rate%7Bjob_name%3D%22demeter%22%7D)&g1.tab=0&g1.stacked=0&g1.show_exemplars=0&g1.range_input=18h&g2.expr=sum(flink_taskmanager_job_task_operator_KafkaSourceReader_KafkaConsumer_records_lag_max%7Bjob_name%3D%22baseline%22%7D)%2Fcount(flink_taskmanager_job_task_operator_KafkaSourceReader_KafkaConsumer_records_lag_max%7Bjob_name%3D%22baseline%22%7D)&g2.tab=0&g2.stacked=0&g2.show_exemplars=0&g2.range_input=2h&g3.expr=flink_jobmanager_taskSlotsTotal%7Bpod%3D~%22demeter.*%22%2Cnamespace%3D%22demeter%22%7D&g3.tab=0&g3.stacked=0&g3.show_exemplars=0&g3.range_input=12h&g4.expr=flink_jobmanager_numRegisteredTaskManagers%7Bpod%3D~%22%5Edemeter.*%22%7D&g4.tab=0&g4.stacked=0&g4.show_exemplars=0&g4.range_input=18h&g5.expr=sum(flink_taskmanager_Status_JVM_CPU_Load%7Bpod%3D~%22%5Ebaseline.*%22%7D)%2Fcount(flink_taskmanager_Status_JVM_CPU_Load%7Bpod%3D~%22%5Ebaseline.*%22%7D)&g5.tab=0&g5.stacked=0&g5.show_exemplars=0&g5.range_input=1h&g6.expr=rate(container_cpu_usage_seconds_total%7Bnamespace%3D%22demeter%22%2C%20pod%3D~%22analytics.*%22%7D%5B5m%5D)&g6.tab=0&g6.stacked=0&g6.show_exemplars=0&g6.range_input=2h&g7.expr=container_memory_usage_bytes%7Bnamespace%3D%22demeter%22%2C%20pod%3D~%22analytics.*%22%7D&g7.tab=0&g7.stacked=0&g7.show_exemplars=0&g7.range_input=6h&g8.expr=flink_jobmanager_taskSlotsTotal%7Bnamespace%3D%22reactive%22%7D&g8.tab=0&g8.stacked=0&g8.show_exemplars=0&g8.range_input=6h&g9.expr=flink_jobmanager_numRegisteredTaskManagers%7Bnamespace%3D%22reactive%22%7D&g9.tab=0&g9.stacked=0&g9.show_exemplars=0&g9.range_input=18h&g10.expr=sum(flink_taskmanager_Status_JVM_CPU_Load%7Bpod%3D~%22%5Eflink-taskmanager.*%22%7D)%2Fcount(flink_taskmanager_Status_JVM_CPU_Load%7Bpod%3D~%22%5Eflink-taskmanager.*%22%7D)&g10.tab=0&g10.stacked=0&g10.show_exemplars=0&g10.range_input=18h
 ```
+
+---
+
+## Bibliography
+
+@misc{geldenhuys2024demeter,
+      title={Demeter: Resource-Efficient Distributed Stream Processing under Dynamic Loads with Multi-Configuration Optimization}, 
+      author={Morgan Geldenhuys and Dominik Scheinert and Odej Kao and Lauritz Thamsen},
+      year={2024},
+      eprint={2403.02129},
+      archivePrefix={arXiv},
+      primaryClass={cs.DC}
+}
