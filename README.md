@@ -93,13 +93,17 @@ http://[IP address of K8s Master]:30090/graph?g0.expr=sum(flink_taskmanager_job_
 
 ---
 
-## Bibliography
+## Bibtex
 
+To cite this work in your academic papers, please use the following BibTeX entry:
+
+```bibtex
 @misc{geldenhuys2024demeter,
-      title={Demeter: Resource-Efficient Distributed Stream Processing under Dynamic Loads with Multi-Configuration Optimization}, 
-      author={Morgan Geldenhuys and Dominik Scheinert and Odej Kao and Lauritz Thamsen},
-      year={2024},
-      eprint={2403.02129},
-      archivePrefix={arXiv},
-      primaryClass={cs.DC}
+  title={Demeter: Resource-Efficient Distributed Stream Processing under Dynamic Loads with Multi-Configuration Optimization}, 
+  author={Morgan Geldenhuys and Dominik Scheinert and Odej Kao and Lauritz Thamsen},
+  year={2024},
+  eprint={2403.02129},
+  archivePrefix={arXiv},
+  primaryClass={cs.DC}
 }
+
